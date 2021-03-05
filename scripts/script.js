@@ -2,6 +2,7 @@ const left_arrow = document.getElementsByClassName("line_left")[0];
 const line_right = document.getElementsByClassName("line_right")[0];
 const subnav = document.getElementsByClassName("subnav");
 const grid_text = document.getElementsByClassName("grid_text");
+const vectors = document.getElementsByClassName("vector")
 let photo = document.getElementById("slider")
 let num_of_photo = 1;
 const entities = [
@@ -58,6 +59,27 @@ subnav[1].addEventListener("click", function(e) {
     
 })
 subnav[2].addEventListener("click", function(e) {
+    e.preventDefault()
+    num_of_photo = 3;
+    setPhoto()
+
+    
+})
+vectors[0].addEventListener("click", function(e) {
+    e.preventDefault()
+    num_of_photo = 1;
+    setPhoto()
+
+    
+})
+vectors[1].addEventListener("click", function(e) {
+    e.preventDefault()
+    num_of_photo = 2;
+    setPhoto()
+
+    
+})
+vectors[2].addEventListener("click", function(e) {
     e.preventDefault()
     num_of_photo = 3;
     setPhoto()
