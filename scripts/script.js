@@ -1,8 +1,8 @@
 const left_arrow = document.getElementsByClassName("line_left")[0];
 const line_right = document.getElementsByClassName("line_right")[0];
-const subnav = document.getElementsByClassName("subnav");
+const subnav = document.querySelectorAll(".subnav");
 const grid_text = document.getElementsByClassName("grid_text");
-const vectors = document.getElementsByClassName("vector")
+const vectors = document.querySelectorAll(".vector");
 let photo = document.getElementById("slider")
 let num_of_photo = 1;
 const entities = [
@@ -28,6 +28,7 @@ const entities = [
       
     }
   ]
+
 left_arrow.addEventListener("click", function() {
     if (num_of_photo == 1) {
         num_of_photo = 3
@@ -36,6 +37,7 @@ left_arrow.addEventListener("click", function() {
     }
     setPhoto()
 });
+
 line_right.addEventListener("click", function() {
     if (num_of_photo == 3) {
         num_of_photo = 1
@@ -44,48 +46,24 @@ line_right.addEventListener("click", function() {
     }
     setPhoto()
 });
-subnav[0].addEventListener("click", function(e) {
-    e.preventDefault()
-    num_of_photo = 1;
-    setPhoto()
 
+subnav.forEach((item, index) => {
+    // let a = index
+    item.addEventListener("click", function(e) {
+        e.preventDefault()
+        num_of_photo = index +1;
+        setPhoto()
+    });
     
-})
-subnav[1].addEventListener("click", function(e) {
-    e.preventDefault()
-    num_of_photo = 2;
-    setPhoto()
+});
 
-    
+vectors.forEach((item, index) => {
+    item.addEventListener("click", function() {
+        num_of_photo = index + 1;
+        setPhoto()
+    })
 })
-subnav[2].addEventListener("click", function(e) {
-    e.preventDefault()
-    num_of_photo = 3;
-    setPhoto()
 
-    
-})
-vectors[0].addEventListener("click", function(e) {
-    e.preventDefault()
-    num_of_photo = 1;
-    setPhoto()
-
-    
-})
-vectors[1].addEventListener("click", function(e) {
-    e.preventDefault()
-    num_of_photo = 2;
-    setPhoto()
-
-    
-})
-vectors[2].addEventListener("click", function(e) {
-    e.preventDefault()
-    num_of_photo = 3;
-    setPhoto()
-
-    
-})
 function setPhoto() {
     var a = document.getElementsByClassName("vector");
     for (v of a) {
