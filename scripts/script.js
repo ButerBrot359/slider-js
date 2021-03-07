@@ -69,6 +69,17 @@ function setPhoto() {
     for (v of a) {
         v.src = "images/circle_grey.svg" 
     }
+    for (v of subnav) {
+        v.style.fontSize = "14px";
+        v.style.lineHeight = "19px";
+        v.style.color = "rgba(255, 255, 255, 0.3)";
+        v.style.borderBottom = "none"
+    }
+    subnav[num_of_photo-1].style.color = "#E3B873";
+    subnav[num_of_photo-1].style.lineHeight = "32px";
+    subnav[num_of_photo-1].style.borderTop = "0";
+    subnav[num_of_photo-1].style.borderBottom = "1px solid #E3B873";
+    subnav[num_of_photo-1].style.paddingBottom = "7px"
     a[num_of_photo-1].src = "images/white_circle.svg"
     grid_text[0].innerHTML = entities[num_of_photo-1].city
     grid_text[1].innerHTML = entities[num_of_photo-1].area

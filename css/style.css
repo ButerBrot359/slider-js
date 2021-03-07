@@ -197,7 +197,9 @@ body * {
     padding-top: 26px;
     display: flex;
 }
-
+.vector {
+    cursor: pointer
+}
 .subtitle {
     font-size: 27px;
     line-height: 37px;
@@ -257,10 +259,12 @@ body * {
 
 .line_left {
     margin-left: -25px;
+    cursor: pointer
 }
 
 .line_right {
     margin-right: -25px;
+    cursor: pointer
 }
 /*---------------end of section completed proj----------*/
 .online_control-head{
